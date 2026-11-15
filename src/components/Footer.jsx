@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
         <div className="mt-6 flex flex-col gap-3 text-xs text-white/45 md:flex-row md:items-center md:justify-between">
           <p className="inline-flex items-center gap-2"><Walker size={9} /> © {new Date().getFullYear()} Nata Sweswi Clothing. Zeal Rulers is a Nata Sweswi brand.</p>
-          <a href={href("admin")} className="hover:text-white">Staff login</a>
+          <b>Designed by Maluleke Hlulani</b><a href={href("admin")} className="hover:text-white">Staff login</a>
         </div>
       </div>
     </footer>
