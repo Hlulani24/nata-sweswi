@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Plus, Search, Star, Pencil, Trash2, RotateCcw, DatabaseZap } from "lucide-react";
 import ProductEditor from "./ProductEditor.jsx";
 import Price, { isSpecial } from "../Price.jsx";
-import { PRODUCT_CATEGORIES } from "../../data/products.js";
+import { categoriesOf } from "../../data/products.js";
 import { IS_SUPABASE } from "../../lib/supabase.js";
 import { useProducts, saveProduct, deleteProduct, resetDemoProducts, loadStarterCatalogue } from "../../lib/store.js";
 
@@ -66,7 +66,7 @@ export default function ProductsTab({ notify }) {
         </label>
         <select value={cat} onChange={(e) => setCat(e.target.value)} className="field md:w-52 [&>option]:text-black" aria-label="Filter by category">
           <option>All</option>
-          {PRODUCT_CATEGORIES.map((c) => (
+          {categoriesOf(products).map((c) => (
             <option key={c}>{c}</option>
           ))}
         </select>

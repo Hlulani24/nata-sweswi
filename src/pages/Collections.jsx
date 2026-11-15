@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Search, Loader2 } from "lucide-react";
 import { useProducts } from "../lib/store.js";
-import { CATEGORIES } from "../data/products.js";
+import { categoriesOf } from "../data/products.js";
 import { isSpecial } from "../components/Price.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import ProductModal from "../components/ProductModal.jsx";
@@ -10,6 +10,7 @@ import { PRICE_NOTE, SHOW_PRICES } from "../config.js";
 
 export default function Collections({ params }) {
   const { products, loading } = useProducts();
+  const CATEGORIES = ["All", ...categoriesOf(products).filter((c) => products.some((p) => p.cat === c))];
   const hasSpecials = products.some(isSpecial);
   const tabs = hasSpecials ? [...CATEGORIES, "Specials"] : CATEGORIES;
   const cat = tabs.includes(params.cat) ? params.cat : "All";

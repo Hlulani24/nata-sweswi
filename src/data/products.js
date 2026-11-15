@@ -151,3 +151,9 @@ export const LOOKBOOK = [
   { src: img("kids-tee-green"), caption: "Kids drip tee · green" },
   { src: img("walker-tee-full"), caption: "Walker tee" },
 ];
+
+// Built-in categories plus any new ones the owner has typed in the admin panel.
+export const categoriesOf = (products = []) => {
+  const extra = [...new Set(products.map((p) => p.cat).filter((c) => c && !PRODUCT_CATEGORIES.includes(c)))].sort();
+  return [...PRODUCT_CATEGORIES, ...extra];
+};

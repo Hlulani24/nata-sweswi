@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { X, ArrowUp, ArrowDown, Trash2, Upload, Images, Loader2, Plus } from "lucide-react";
-import { PRODUCT_CATEGORIES } from "../../data/products.js";
+import { PRODUCT_CATEGORIES, categoriesOf } from "../../data/products.js";
 import { IMAGE_LIBRARY } from "../../data/library.js";
 import { saveProduct, nextSort } from "../../lib/store.js";
 import { uploadProductImage } from "../../lib/images.js";
@@ -45,6 +45,8 @@ export default function ProductEditor({ product, all, onClose, notify }) {
         }
       : { ...BLANK }
   );
+  const cats = categoriesOf(all);
+  const [newCat, setNewCat] = useState(false);
   const [busy, setBusy] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [showLib, setShowLib] = useState(false);
@@ -110,7 +112,7 @@ export default function ProductEditor({ product, all, onClose, notify }) {
     const clean = {
       id,
       name,
-      cat: f.cat,
+      cat: (f.cat || "").trim() || cats[0],
       blurb: f.blurb.trim(),
       status: f.status,
       featured: f.featured,
@@ -157,14 +159,20 @@ export default function ProductEditor({ product, all, onClose, notify }) {
               <span className={label}>Name *</span>
               <input value={f.name} onChange={set("name")} className="field" placeholder="e.g. Signature Hoodie Set" />
             </label>
-            <label className="block">
+            <div className="block">
               <span className={label}>Category</span>
-              <select value={f.cat} onChange={set("cat")} className={SELECT}>
-                {PRODUCT_CATEGORIES.map((c) => (
-                  <option key={c}>{c}</option>
-                ))}
-              </select>
-            </label>
+              {newCat ? (
+                <div className="flex gap-2">
+                  <input autoFocus value={f.cat} onChange={set("cat")} className="field" placeholder="Type the new category name" aria-label="New category name" />
+                  <button type="button" onClick={() => { setNewCat(false); setF((x) => ({ ...x, cat: cats[0] })); }} className="shrink-0 rounded-xl border border-white/20 px-3 text-xs font-bold text-bone/70 hover:border-sun hover:text-sun">Cancel</button>
+                </div>
+              ) : (
+                <select value={f.cat} onChange={(e) => { if (e.target.value === "__new__") { setNewCat(true); setF((x) => ({ ...x, cat: "" })); } else set("cat")(e); }} className={SELECT}>
+                  {cats.map((c) => (<option key={c}>{c}</option>))}
+                  <option value="__new__">＋ Add a new category…</option>
+                </select>
+              )}
+            </div>
             <label className="block">
               <span className={label}>Photos are of…</span>
               <select value={f.status} onChange={set("status")} className={SELECT}>
@@ -249,7 +257,7 @@ export default function ProductEditor({ product, all, onClose, notify }) {
             <p className="mt-2 text-xs text-bone/45">
               {f.sizes.length
                 ? "Customers pick from these sizes."
-                : `Nothing ticked — customers will see: ${sizesFor({ cat: f.cat, sizes: [] }).join(", ")}.`}
+                : `Nothing ticked — customers will see: ${sizesFor({ cat: (f.cat || "").trim() || cats[0], sizes: [] }).join(", ")}.`}
             </p>
           </div>
 

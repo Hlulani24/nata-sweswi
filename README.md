@@ -46,3 +46,5 @@ Use **new** accounts for this client:
 - **Story page** copy is written from the brand's slogans only — add the owner's real story, founding year, location.
 - **Photos** are cropped from the flyers (some are low-resolution). Replace with original product photography; request vector/PNG logos.
 - The kids photos and several mock-ups look AI-generated — confirm the owner is happy to publish them as real product photos.
+cd nata-sweswi
+
