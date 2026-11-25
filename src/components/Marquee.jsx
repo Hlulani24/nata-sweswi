@@ -1,7 +1,7 @@
 import React from "react";
 import { Walker } from "./Brand.jsx";
 
-const WORDS = ["Guaranteed awesomeness", "#ArriveInStyle", "We walk this journey with you", "#KulekuNyanganyeni", "Zeal Rulers · Rise. Focus. Win."];
+const WORDS = ["Guaranteed awesomeness", "#ArriveInStyle", "We walk this journey with you", "#KulekuNyanganyeni"];
 
 // Red "caution tape" ticker, slightly tilted.
 export default function Marquee({ tilt = true }) {

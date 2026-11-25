@@ -9,11 +9,9 @@ import { Drips, Walker } from "../components/Brand.jsx";
 import { LOGOS, waLink } from "../config.js";
 
 const RANGES = [
-  { cat: "Tees", img: "/images/drip-tee-cream.jpg", note: "Oversized · heavy cotton", cls: "md:col-span-2 md:row-span-2 aspect-[4/5] md:aspect-auto" },
-  { cat: "Hoodies & Sets", img: "/images/arrive-set-red.jpg", note: "Hoodie + jogger sets", cls: "aspect-[4/5]" },
-  { cat: "Kids", img: "/images/kids-tee-navy.jpg", note: "Eight colours", cls: "aspect-[4/5]" },
-  { cat: "Zeal Rulers", img: "/images/zr-sweat-black.jpg", note: "Rise. Focus. Win.", cls: "aspect-[4/5]" },
-  { cat: "Headwear & Shorts", img: "/images/drip-bucket-hat.jpg", note: "Bucket hats · shorts", cls: "aspect-[4/5]" },
+  { cat: "Tees", img: "/images/baggy-tee-white.jpg", note: "Oversized · heavy cotton", cls: "aspect-[4/5]" },
+  { cat: "Hoodies & Sets", img: "/images/hoodie-black.jpg", note: "Hoodies · sweaters · trackpants", cls: "aspect-[4/5]" },
+  { cat: "Headwear & Shorts", img: "/images/bucket-hat-white.jpg", note: "Bucket hats · caps · shorts", cls: "aspect-[4/5]" },
 ];
 
 const STEPS = [
@@ -45,14 +43,14 @@ export default function Home() {
               in <span className="relative inline-block text-blood">style<svg className="absolute -bottom-3 left-0 h-4 w-full" viewBox="0 0 200 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8c30-6 60 4 100-1s70-3 96 0" stroke="#0b0b0b" strokeWidth="5" fill="none" strokeLinecap="round" /></svg></span>.
             </h1>
             <p className="reveal mt-9 max-w-md text-lg leading-relaxed text-ink/70" data-d="2">
-              Tees, hoodies, matching sets and kids wear made to be seen. We walk this journey with you — <strong className="text-ink">guaranteed awesomeness.</strong>
+              Tees, hoodies, trackpants and headwear made to be seen. We walk this journey with you — <strong className="text-ink">guaranteed awesomeness.</strong>
             </p>
             <div className="reveal mt-9 flex flex-wrap gap-3" data-d="3">
               <a href={href("collections")} className="btn-blood">Shop the range <ArrowRight size={17} /></a>
               <a href={waLink("Hi Nata Sweswi, I'd like to order.")} target="_blank" rel="noreferrer" className="btn-line"><MessageCircle size={17} /> WhatsApp us</a>
             </div>
             <ul className="reveal mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t-2 border-ink pt-6" data-d="3">
-              {[["6", "official logos"], ["8", "kids colours"], ["1:1", "WhatsApp quotes"]].map(([n, l]) => (
+              {[["6", "official logos"], ["8", "core pieces"], ["1:1", "WhatsApp quotes"]].map(([n, l]) => (
                 <li key={l} className="flex items-baseline gap-2"><span className="font-display text-4xl leading-none">{n}</span><span className="eyebrow text-[0.65rem] text-ink/50">{l}</span></li>
               ))}
             </ul>
@@ -107,14 +105,14 @@ export default function Home() {
           </div>
           <a href={href("collections")} className="reveal btn-line" data-d="2">View everything <ArrowUpRight size={16} /></a>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
           {RANGES.map((r, i) => (
             <a key={r.cat} href={href(`collections?cat=${encodeURIComponent(r.cat)}`)} data-d={i % 3} className={`reveal group relative overflow-hidden border-2 border-ink bg-smoke ${r.cls}`}>
               <img src={r.img} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-4 text-white md:p-6">
                 <p className="eyebrow text-[0.6rem] text-white/70">{r.note}</p>
-                <h3 className={`h-display mt-1 ${i === 0 ? "text-4xl md:text-6xl" : "text-3xl md:text-4xl"}`}>{r.cat}</h3>
+                <h3 className={`h-display mt-1 text-3xl md:text-5xl`}>{r.cat}</h3>
                 <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest transition group-hover:gap-3 group-hover:text-blood">Shop <ArrowRight size={14} /></span>
               </div>
             </a>
@@ -160,46 +158,6 @@ export default function Home() {
               </a>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ZEAL RULERS */}
-      <section className="relative overflow-hidden bg-ink pb-24 pt-32 text-white">
-        <Drips color="#D9A441" />
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2">
-          <div className="reveal relative mx-auto w-full max-w-md lg:order-2">
-            <div className="absolute -left-4 -top-4 h-full w-full border-2 border-gold" aria-hidden="true" />
-            <img src="/images/zr-set-full.jpg" alt="Zeal Rulers black and gold set" loading="lazy" className="relative aspect-[4/5] w-full object-cover object-top" />
-          </div>
-          <div>
-            <p className="reveal eyebrow text-gold">A Nata Sweswi brand</p>
-            <h2 className="reveal h-display mt-4 text-7xl md:text-[8.5rem]" data-d="1"><span className="text-gold">Zeal</span><br />Rulers</h2>
-            <p className="reveal mt-4 font-marker text-2xl text-white/80" data-d="2">Rise. Focus. Win.</p>
-            <p className="reveal mt-6 max-w-md text-base leading-relaxed text-white/65" data-d="2">
-              Black-and-gold performance wear with the ZR crown. Sweat sets, training tops and shorts for people who put in the work.
-            </p>
-            <a href={href("collections?cat=Zeal%20Rulers")} className="reveal mt-9 inline-flex items-center justify-center gap-2 bg-gold px-6 py-3.5 text-sm font-extrabold uppercase tracking-wider text-ink transition hover:bg-white" data-d="3">
-              Shop Zeal Rulers <ArrowRight size={16} />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* KIDS */}
-      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="reveal eyebrow text-blood">Kids range</p>
-            <h2 className="reveal h-display mt-4 text-6xl md:text-8xl" data-d="1">Little legends,<br />big drip</h2>
-          </div>
-          <a href={href("collections?cat=Kids")} className="reveal btn-line" data-d="2">Shop kids <ArrowUpRight size={16} /></a>
-        </div>
-        <div className="no-scrollbar mt-12 flex snap-x gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-4 md:gap-5 md:overflow-visible lg:grid-cols-8 lg:gap-3">
-          {["black", "white", "red", "pink", "cream", "navy", "green", "grey"].map((c, i) => (
-            <a key={c} href={href("collections?cat=Kids")} className="reveal relative w-[44%] shrink-0 snap-start overflow-hidden border-2 border-ink bg-smoke sm:w-[30%] md:w-auto" data-d={i % 4 ? i % 4 : undefined}>
-              <img src={`/images/kids-tee-${c}.jpg`} alt={`Kids drip tee in ${c}`} loading="lazy" className="aspect-[1/2] w-full object-cover object-top" />
-            </a>
-          ))}
         </div>
       </section>
 

@@ -9,7 +9,7 @@ import { SEED_PRODUCTS } from "../data/products.js";
  *    so the admin panel can be tried out end to end with zero setup.
  */
 
-const LS_PRODUCTS = "natasweswi.demo.products.v1";
+const LS_PRODUCTS = "natasweswi.demo.products.v3";
 const LS_LEADS = "natasweswi.demo.leads.v1";
 const EVT = "natasweswi-store-change";
 

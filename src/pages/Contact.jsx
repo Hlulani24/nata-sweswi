@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Phone, Instagram, Facebook, MessageCircle, CheckCircle2, Loader2 } from "lucide-react";
+import { Phone, Mail, Instagram, Facebook, MessageCircle, CheckCircle2, Loader2 } from "lucide-react";
 import { submitLead } from "../lib/leads.js";
 import { PHONES, SOCIALS, waLink } from "../config.js";
+
+const EMAIL = "info@natasweswi.co.za";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
@@ -27,7 +29,7 @@ export default function Contact() {
           Say<br />hello.
         </h1>
         <p className="reveal mt-6 max-w-xl text-base text-ink/65 md:text-lg" data-d="2">
-          Questions, quotes or just want to see more? Reach us any way that suits you.
+          Based in Johannesburg. Questions, quotes or just want to see more? Reach us any way that suits you.
         </p>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[1fr_1fr] lg:gap-10">
@@ -48,6 +50,19 @@ export default function Contact() {
                 </span>
               </a>
             ))}
+            <a
+              href={`mailto:${EMAIL}`}
+              className="reveal flex items-center gap-5 border-2 border-ink bg-white p-6 transition hover:shadow-[5px_5px_0_0_#0b0b0b]"
+              data-d="1"
+            >
+              <span className="grid h-14 w-14 shrink-0 place-items-center bg-ink text-white">
+                <Mail size={22} />
+              </span>
+              <span className="min-w-0">
+                <span className="eyebrow block text-[0.6rem] text-ink/45">Email</span>
+                <span className="mt-1 block break-all font-display text-xl uppercase md:text-2xl">{EMAIL}</span>
+              </span>
+            </a>
             <a
               href={waLink("Hi Nata Sweswi, I'd like to ask about…")}
               target="_blank"

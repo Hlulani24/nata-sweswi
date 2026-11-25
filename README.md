@@ -40,11 +40,9 @@ Use **new** accounts for this client:
    Then Admin → Products → **Load starter catalogue** once.
 
 ## Please confirm with the client
-- **Prices** are dummy demo prices. Replace in Admin.
+- **Prices** are the owner's real prices for the 8 core products. Change them any time in Admin.
 - **Facebook / Instagram / TikTok URLs** are best guesses from the handles on the flyer (`Nata Sweswi Clothing`, `Nata_Sweswi`, `@Natasweswiclothing`) — verify.
 - **WhatsApp 073 611 7441** is taken from the flyer.
 - **Story page** copy is written from the brand's slogans only — add the owner's real story, founding year, location.
 - **Photos** are cropped from the flyers (some are low-resolution). Replace with original product photography; request vector/PNG logos.
-- The kids photos and several mock-ups look AI-generated — confirm the owner is happy to publish them as real product photos.
-cd nata-sweswi
-
+- Several mock-ups look AI-generated — confirm the owner is happy to publish them as real product photos.

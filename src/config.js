@@ -5,14 +5,14 @@ export const BRAND = {
   short: "Nata Sweswi",
   tagline: "We walk this journey with you.",
   promise: "Guaranteed awesomeness.",
-  tags: ["#ArriveInStyle", "#KulekuNyanganyeni", "#ZealRulers"],
+  tags: ["#ArriveInStyle", "#KulekuNyanganyeni"],
 };
 
 // From the brand flyers.
-export const PHONES = [{ display: "073 611 7441", tel: "+27736117441" }];
+export const PHONES = [{ display: "079 018 9854", tel: "+27790189854" }];
 
 // WhatsApp number in international format, no "+".
-export const WHATSAPP_NUMBER = "27736117441";
+export const WHATSAPP_NUMBER = "27790189854";
 
 export const SOCIALS = {
   whatsapp: { label: "073 611 7441" },
