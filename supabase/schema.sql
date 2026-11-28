@@ -1,4 +1,4 @@
--- LETLAKA — run ONCE in Supabase → SQL Editor. Safe to re-run.
+-- NATA SWESWI — run ONCE in Supabase → SQL Editor. Safe to re-run.
 -- Visitors: read visible products, submit forms. Admins only: everything else.
 
 -- 1) Who is an admin ------------------------------------------------------
@@ -101,3 +101,16 @@ begin
 end $$;
 
 -- Product photos are stored on Cloudinary (not Supabase) — nothing to set up here.
+
+-- 4) Table permissions ------------------------------------------------------
+-- Newer Supabase projects do not give the browser roles access to new tables by default.
+-- Row Level Security (above) still decides which rows each person can see or change.
+grant usage on schema public to anon, authenticated;
+
+grant select on public.products to anon, authenticated;
+grant insert, update, delete on public.products to authenticated;
+
+grant insert on public.custom_orders, public.basket_orders, public.enquiries to anon, authenticated;
+grant select, update, delete on public.custom_orders, public.basket_orders, public.enquiries to authenticated;
+
+grant execute on function public.is_admin() to anon, authenticated;

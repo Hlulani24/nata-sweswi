@@ -105,7 +105,7 @@ export const SEED_PRODUCTS = RAW.map((p, i) => ({
 
 // Lookbook (src, caption, wide = landscape crop).
 export const LOOKBOOK = [
-  { src: img("flyer-brand"), caption: "We walk this journey with you", tall: true },
+  //{ src: img("flyer-brand"), caption: "We walk this journey with you", tall: true },
   { src: img("baggy-tee-white"), caption: "Baggy white tee", tall: true },
   { src: img("hoodie-black"), caption: "Black hoodie", tall: true },
   { src: img("cap-black"), caption: "Cap" },
@@ -113,10 +113,9 @@ export const LOOKBOOK = [
   { src: img("bucket-hat-white"), caption: "Bucket hat" },
   { src: img("drip-tee-black"), caption: "Drip Logo Tee · black" },
   { src: img("drip-tee-cream"), caption: "Drip Logo Tee · cream" },
-  { src: img("crew-group"), caption: "The whole crew", wide: true },
   { src: img("badge-crewneck-white"), caption: "Badge crewneck" },
-  { src: img("arrive-set-full"), caption: "#ArriveInStyle red set" },
-  { src: img("monogram-full"), caption: "NS monogram set", tall: true },
+  //{ src: img("arrive-set-full"), caption: "#ArriveInStyle red set" },
+ // { src: img("monogram-full"), caption: "NS monogram set", tall: true },
   { src: img("drip-bucket-hat"), caption: "Drip bucket hat" },
   { src: img("flyer-logos"), caption: "All six logos", tall: true },
   { src: img("walker-tee-full"), caption: "Walker tee" },

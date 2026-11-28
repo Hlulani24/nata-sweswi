@@ -93,7 +93,7 @@ export default function BasketDrawer() {
         aria-modal="true"
         aria-label="Your basket"
         onClick={(e) => e.stopPropagation()}
-        className="flex h-full w-full flex-col bg-coal shadow-2xl sm:max-w-md"
+        className="flex h-full w-full flex-col bg-coal text-bone shadow-2xl sm:max-w-md"
       >
         <header className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
           <div className="flex items-center gap-3">

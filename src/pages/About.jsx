@@ -41,10 +41,6 @@ export default function About() {
             </p>
             <p className="font-marker text-2xl text-blood">“{BRAND.tagline}”</p>
           </div>
-          <div className="reveal relative mx-auto w-full max-w-md" data-d="1">
-            <div className="absolute -right-3 -top-3 h-full w-full bg-blood" aria-hidden="true" />
-            <img src="/images/crew-group.jpg" alt="The Nata Sweswi crew in tees, hoodies and sets" className="relative w-full border-2 border-ink object-cover" loading="lazy" />
-          </div>
         </div>
       </section>
 

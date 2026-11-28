@@ -103,7 +103,7 @@ export default function LeadsTab({ table, notify }) {
                   <span className="font-display text-lg font-bold">{l.name}</span>
                   {table === "basket_orders" && (
                     <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-semibold">
-                      {(l.items || []).reduce((n, x) => n + x.qty, 0)} items
+                      {(l.items || []).reduce((n, x) => n + x.qty, 0)} {(l.items || []).reduce((n, x) => n + x.qty, 0) === 1 ? "item" : "items"}
                     </span>
                   )}
                   <span className="text-sm text-bone/50">{l.phone}</span>

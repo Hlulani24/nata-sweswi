@@ -9,10 +9,10 @@ export const BRAND = {
 };
 
 // From the brand flyers.
-export const PHONES = [{ display: "079 018 9854", tel: "+27790189854" }];
+export const PHONES = [{ display: "073 611 7441", tel: "+27736117441" }];
 
 // WhatsApp number in international format, no "+".
-export const WHATSAPP_NUMBER = "27790189854";
+export const WHATSAPP_NUMBER = "27736117441";
 
 export const SOCIALS = {
   whatsapp: { label: "073 611 7441" },
